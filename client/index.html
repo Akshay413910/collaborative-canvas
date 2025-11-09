@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Collaborative Canvas — Light Theme</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <div id="toolbar">
+      <div class="left">
+        <button id="brushBtn" class="tool active">Brush</button>
+        <button id="eraserBtn" class="tool">Eraser</button>
+        <label class="control">Color <input id="colorPicker" type="color" value="#06b6d4"></label>
+        <label class="control">Size <input id="sizeRange" type="range" min="1" max="40" value="4"></label>
+        <button id="undoBtn" class="tool">Undo</button>
+        <button id="redoBtn" class="tool">Redo</button>
+        <button id="clearBtn" class="tool">Clear</button>
+      </div>
+      <div class="right">
+        <div id="users" title="Connected users"></div>
+      </div>
+    </div>
+
+    <div id="canvasWrap">
+      <canvas id="canvas"></canvas>
+      <div id="cursors"></div>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script type="module" src="canvas.js"></script>
+  <script type="module" src="main.js"></script>
+</body>
+</html>
